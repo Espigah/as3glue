@@ -1,0 +1,17 @@
+#summary setup instructions
+
+= Introduction =
+
+How to interface an Arduino board from Flash/Flex/AIR applications using the Arduino class in as3glue.
+
+= Details =
+
+1. Upload Pd_firmware.pde (or one of the other included Arduino sketches) to the Arduino board.
+
+2. Set up a serialProxy to enable Flash to communicate with the Arduino via a socket connection (a sample config file for serialProxy is included in the library).
+
+3. Instantiate an Arduino object using the port that you set up in (2).
+
+4. Register event listeners for incoming Arduino data (see the included examples). 
+
+5. Read and write to the Arduino using functions similar to those in the Arduino reference (see the included examples).
