@@ -1,5 +1,32 @@
+/*
+ * Copyright 2007 (c) Erik Sjodin, eriksjodin.net
+ *
+ * Permission is hereby granted, free of charge, to any person
+ * obtaining a copy of this software and associated documentation
+ * files (the "Software"), to deal in the Software without
+ * restriction, including without limitation the rights to use,
+ * copy, modify, merge, publish, distribute, sublicense, and/or sell
+ * copies of the Software, and to permit persons to whom the
+ * Software is furnished to do so, subject to the following
+ * conditions:
+ *
+ * The above copyright notice and this permission notice shall be
+ * included in all copies or substantial portions of the Software.
+ *
+ * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND,
+ * EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES
+ * OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND
+ * NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT
+ * HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY,
+ * WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING
+ * FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR
+ * OTHER DEALINGS IN THE SOFTWARE.
+ */
 package net.eriksjodin.helpers
 {
+	/**
+	* @author Erik Sjodin, eriksjodin.net
+	*/
 	public final class Log
 	{
 		private static var _user:String = "info";
@@ -47,35 +74,35 @@ package net.eriksjodin.helpers
 		
 		public static function fatal(user:String = "info", ... args):void
 		{
-			if(_enabled && (_user==user || user == "info") && _level<=FATAL){
+			if(_enabled && (_user==user || user == "info") && _level>=FATAL){
 				trace(resolveLevelAsName(_level), user , args);
 			}
 		}
 		
 		public static function error(user:String = "info", ... args):void
 		{
-			if(_enabled && (_user==user || user == "info") && _level<=ERROR){
+			if(_enabled && (_user==user || user == "info") && _level>=ERROR){
 				trace(resolveLevelAsName(_level), user , args);
 			}
 		}
 		
 		public static function warn(user:String = "info", ... args):void
 		{
-			if(_enabled && (_user==user || user == "info") && _level<=WARN){
+			if(_enabled && (_user==user || user == "info") && _level>=WARN){
 				trace(resolveLevelAsName(_level), user , args);
 			}
 		}
 		
 		public static function info(user:String = "info", ... args):void
 		{
-			if(_enabled && (_user==user || user == "info") && _level<=INFO){
+			if(_enabled && (_user==user || user == "info") && _level>=INFO){
 				trace(resolveLevelAsName(_level), user , args);
 			}
 		}
 		
 		public static function debug(user:String = "info", ... args):void
 		{
-			if(_enabled && (_user==user || user == "info") && _level<=DEBUG){
+			if(_enabled && (_user==user || user == "info") && _level>=DEBUG){
 				trace(resolveLevelAsName(_level), user , args);
 			}
 		}

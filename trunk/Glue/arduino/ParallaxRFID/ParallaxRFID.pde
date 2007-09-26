@@ -4,7 +4,7 @@
 /**
 * Prallax RFID reader code for Arduino 
 * Wiring version by BARRAGAN <http://people.interaction-ivrea.it/h.barragan>, modified for Arudino by djmatic
-* Modified to use SoftwareSerial and Firmata by erik sjodin, http://www.eriksjodin.net
+* Modified to use SoftwareSerial and Firmata by Erik Sjodin, eriksjodin.net
 *
 * Connect:
 * Arduino Pin 3 to RFID SOUT
