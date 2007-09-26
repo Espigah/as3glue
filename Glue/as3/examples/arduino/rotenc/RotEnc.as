@@ -7,7 +7,7 @@
 package
 {
 	import net.eriksjodin.arduino.Arduino;
-	import net.eriksjodin.arduino.events.ArduinoPinEvent;
+	import net.eriksjodin.arduino.events.ArduinoEvent;
 	import flash.display.Sprite;
 	
 	[SWF(backgroundColor="#000000", frameRate="60")]
@@ -29,11 +29,11 @@ package
 		 	a = new Arduino("127.0.0.1", 5331);
 		 	
 		 	// the angle from the rotary encoder is sent as analog data on pin 0
-			a.addEventListener(ArduinoPinEvent.ANALOG_DATA, onReceiveAnalogData); 
+			a.addEventListener(ArduinoEvent.ANALOG_DATA, onReceiveAnalogData); 
 		}
 	
 		// trace out the data when it arrives...	
-		public function onReceiveAnalogData(e:ArduinoPinEvent):void {
+		public function onReceiveAnalogData(e:ArduinoEvent):void {
 			trace("Analog pin " + e.pin + ": " + e.value);
 		}
 		

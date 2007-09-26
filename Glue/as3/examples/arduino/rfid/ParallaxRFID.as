@@ -7,7 +7,6 @@
 package
 {
 	import net.eriksjodin.arduino.Arduino;
-	import net.eriksjodin.arduino.events.ArduinoPinEvent;
 	import flash.display.Sprite;
 	import net.eriksjodin.arduino.events.ArduinoSysExEvent;
 	
