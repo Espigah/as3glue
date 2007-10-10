@@ -135,7 +135,7 @@ package net.eriksjodin.arduino {
 		
 		public function writeDigitalPin (pin:int, mode:int):void{
 		
-			var mask:Number = mode << pin;  // get pins 8-13
+			//var mask:Number = mode << pin;  // get pins 8-13
 			
 			// set the bit
 			if(mode==1)
