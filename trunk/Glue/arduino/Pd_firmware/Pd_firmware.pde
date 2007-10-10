@@ -163,6 +163,7 @@ void setAnalogPinReporting(byte pin, byte state) {
  * processInput() is called whenever a byte is available on the
  * Arduino's serial port.  This is where the commands are handled. */
 void processInput(int inputData) {
+    
   int command;
   
   // a few commands have byte(s) of data following the command
