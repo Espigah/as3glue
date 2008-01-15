@@ -1,4 +1,4 @@
-#summary Frequentl Asked Questions
+#summary Frequently Asked Questions
 
 *Q:* The serial proxy finds the Arduino but I can't send receive data from Flash.
 
