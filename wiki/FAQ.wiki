@@ -6,8 +6,10 @@ The serial proxy sees a connection but I can't send/receive data to/from the Ard
 
 *A:* 
 
-Make sure you are connecting to the port your Arduino is on (check serproxy.cfg). 
+1. Make sure you are connecting to the port your Arduino is on (check serproxy.cfg). 
 
-Make sure that the baud setting in serproxy.cfg and Pd_firmware.pde is the same. The default is 115200. Data will be scrambled and no events will be triggered if the baud settings differ. 
+2. Make sure that the baud setting in serproxy.cfg and Pd_firmware.pde is the same. Data will be scrambled and no events will be triggered if the baud settings differ. The default baudrate in the Standard Firmata arduino firmware (formerly known as Pd_firmware) is at the time of writing 57600. The baud rate in the firmware and serproxy.cfg example that is  redistributed with as3Glue has been changed to 115200. If you obtain either the firmware from elsewhere or don't use the serproxy.cfg example then you might need to change the setting. 
 
-Make sure that newlines_to_nils=false in serproxy.cfg. If it is set to true then the serial proxy will convert the "new lines" ascii character (0a in hexadecimal, 10 in decimal) to 0.
+3. Make sure that newlines_to_nils=false in serproxy.cfg. If it is set to true then the serial proxy will convert the "new lines" ascii character (0a in hexadecimal, 10 in decimal) to 0.
+
+4. Try to use a lower baud rate than 115200. 115200 has been working fine for me but it might not for you. Let me know if this resolves your problem.  
