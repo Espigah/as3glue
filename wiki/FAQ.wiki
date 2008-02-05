@@ -2,12 +2,12 @@
 
 *Q:* 
 
-The serial proxy finds the Arduino but I can't send receive data from Flash.
+The serial proxy sees a connection but I can't send/receive data to/from the Arduino.
 
 *A:* 
 
 Make sure you are connecting to the port your Arduino is on (check serproxy.cfg). 
 
-Make sure that the baud setting in serproxy.cfg and Pd_firmware.pde is the same. The default is 115200. data will be scrambled and no events will be triggered if the baud settings differ . 
+Make sure that the baud setting in serproxy.cfg and Pd_firmware.pde is the same. The default is 115200. Data will be scrambled and no events will be triggered if the baud settings differ. 
 
 Make sure that newlines_to_nils=false in serproxy.cfg. 
