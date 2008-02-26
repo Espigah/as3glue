@@ -1,8 +1,10 @@
 #summary Frequently Asked Questions
 
-Q: I need more information. 
+*Q:* I need more information. 
 
-A: Read the [http://code.google.com/p/as3glue/wiki/Reference Reference] and the [http://code.google.com/p/as3glue/wiki/Instructions Instructions]. Also check out Bjoern Hartmann's documentation at [http://protolab.pbwiki.com/FirmataAndFlash protolab].
+*A:* 
+
+Read the [http://code.google.com/p/as3glue/wiki/Reference Reference] and the [http://code.google.com/p/as3glue/wiki/Instructions Instructions]. Also check out Bjoern Hartmann's documentation at [http://protolab.pbwiki.com/FirmataAndFlash protolab].
 
 *Q:* 
 
@@ -17,3 +19,11 @@ The serial proxy sees a connection but I can't send/receive data to/from the Ard
 3. Make sure that newlines_to_nils=false in serproxy.cfg. If it is set to true then the serial proxy will convert the "new lines" ascii character (0a in hexadecimal, 10 in decimal) to 0.
 
 4. Try to use a lower baud rate than 115200. 115200 has been working fine for me but it might not for you. Let me know if this resolves your problem.  
+
+*Q:* I can't get serial proxy configured correctly.
+
+*A:* 
+
+OS X: Try using [http://protolab.pbwiki.com/Arduino2Flash Arduino2Flash] instead of serialProxy
+
+Windows: Try [http://tinker.it/now/2007/06/03/new-tinkerproxy-for-windows tinkerProxy]
