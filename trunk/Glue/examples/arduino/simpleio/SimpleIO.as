@@ -7,7 +7,7 @@ package
 	
 	/**
 	 * Arduino input / output example. 
-	 * To be used with an Arduino board loaded with Pd_firmware.pde.
+	 * To be used with an Arduino board loaded with th Standard Firmata firmware.
 	 * @author erik.sjodin, eriksjodin.net
 	 */
 	[SWF(backgroundColor="#000000", frameRate="60")]
