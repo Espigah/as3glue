@@ -18,9 +18,6 @@ LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 THE SOFTWARE.
 
-Glue is an ActionScript 3 library that enables communication between Flash and Arduino boards. 
-It can be used to connect sensors (such as rotary encoders and motion dectectors), actuators (such as LEDs and motors) 
-and other electronics (such as RFID readers) to Flash, Flex and Air applications. 
-The library includes Arduino and ActionScript code examples as well as redistributions of Arduino firmware and a serial proxy.
+Glue is an ActionScript 3 library that enables communication between Flash and Arduino boards. It can be used to connect sensors (such as rotary encoders and motion dectectors), actuators (such as LEDs and motors) and other electronics (such as RFID readers) to Flash, Flex and Air applications. The library includes Arduino and ActionScript code examples as well as redistributions of Arduino firmware and a serial proxy.
 
-Glue is an open source library licenced under the above MIT licence. Consider some form of donation or attribution if you get money or fame out of it.
+Glue is an open source library licenced under the above MIT licence.
