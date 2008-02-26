@@ -2,7 +2,7 @@
 
 Q: I need more information. 
 
-A: Read the Reference and the Instructions. Also check out Bjoern Hartmann's documentation at [http://protolab.pbwiki.com/FirmataAndFlash protolab].
+A: Read the [http://code.google.com/p/as3glue/wiki/Reference Reference] and the [http://code.google.com/p/as3glue/wiki/Instructions Instructions. Also check out Bjoern Hartmann's documentation at [http://protolab.pbwiki.com/FirmataAndFlash protolab].
 
 *Q:* 
 
