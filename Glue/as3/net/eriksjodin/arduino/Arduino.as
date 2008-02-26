@@ -32,8 +32,9 @@ package net.eriksjodin.arduino {
 	import net.eriksjodin.helpers.Log;
 	
 	 /**
-	 * The Arduino class acts as a proxy for Arduino boards that communicate over a serial proxy using the Firmata protocol.
+	 * The Arduino class acts as a proxy for Arduino boards that communicate over a serial proxy using the Firmata protocol and the Standard Firmata firmware.
 	 * @author Erik Sjodin, eriksjodin.net
+	 * @contributors Bjoern Hartmann, bjoern.org
 	 */
 	public class Arduino extends Socket {
 		
@@ -47,7 +48,7 @@ package net.eriksjodin.arduino {
 		public static const PWM : int = 2;
 		 	
 		private var _host			: String  = "127.0.0.1"; 	
-		private var _port			: uint  = 5333;		 
+		private var _port			: uint  = 5331;		 
 		
 		// data processing variables
 		private var _waitForData 				: int = 0;
@@ -78,7 +79,7 @@ package net.eriksjodin.arduino {
 		private static const ARD_SYSEX_MESSAGE_START		: int = 240;
 		private static const ARD_SYSEX_MESSAGE_END			: int = 247;
 		
-		public function Arduino(host:String = "127.0.0.1", port:int = 5333) {
+		public function Arduino(host:String = "127.0.0.1", port:int = 5331) {
 			super();			
 	
 			if ((_port < 1024) || (_port > 65535)) {
@@ -115,41 +116,46 @@ package net.eriksjodin.arduino {
 		public function setAnalogPinReporting (pin:int, mode:int):void{
 			writeByte(ARD_REPORT_ANALOG_PIN+pin);
 			writeByte(mode);
+			flush();
 		}
 	
 		public function enableDigitalPinReporting ():void{
 			writeByte(ARD_REPORT_DIGITAL_PORTS);
 			writeByte(1);
+			flush();
 		}
 		
 		public function disableDigitalPinReporting ():void{
 			writeByte(ARD_REPORT_DIGITAL_PORTS);
-			writeByte(1);
+			writeByte(0);
+			flush();
 		}
 		
 		public function setPinMode (pin:Number, mode:Number):void{
 			writeByte(ARD_SET_DIGITAL_PIN_MODE);
 			writeByte(pin);
 			writeByte(mode);
+			flush();
 		}
 		
+		//CHANGED
 		public function writeDigitalPin (pin:int, mode:int):void{
-		
-			//var mask:Number = mode << pin;  // get pins 8-13
-			
+	
 			// set the bit
-			if(mode==1)
-				_digitalPins |= (mode << pin);
-				
-			// clear the bit	
+            if(mode==1)
+            	_digitalPins |= (mode << pin);
+                                
+            // clear the bit        
 			if(mode==0)
 				_digitalPins &= ~(1 << pin);
-	
-			// transmit
-	  		writeByte(ARD_DIGITAL_MESSAGE);
-	  		writeByte(_digitalPins % 128); // Tx pins 0-6
-	  		writeByte(_digitalPins >> 7);  // Tx pins 7-13
-	
+        
+            // transmit
+            writeByte(ARD_DIGITAL_MESSAGE);
+            writeByte(_digitalPins % 128); // Tx pins 0-6
+            writeByte(_digitalPins >> 7);  // Tx pins 7-13
+			flush();
+						
+
 		}
 		
 		public function writeDigitalPins (mask:Number):void{
@@ -159,7 +165,8 @@ package net.eriksjodin.arduino {
 		public function writeAnalogPin (pin:Number, value:Number):void{
 			writeByte(ARD_ANALOG_MESSAGE+pin);
 			writeByte(value % 128);
-			writeByte(value >> 7);		
+			writeByte(value >> 7);
+			flush();
 		}
 		
 		// TODO apply filters...
@@ -169,10 +176,12 @@ package net.eriksjodin.arduino {
 		
 		public function requestFirmwareVersion ():void{
 			writeByte(ARD_REPORT_VERSION);
+			flush();
 		}
 		
 		public function resetBoard ():void{
 			writeByte(ARD_SYSTEM_RESET);
+			flush();
 		}
 		
 		//---------------------------------------
