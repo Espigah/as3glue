@@ -4,7 +4,7 @@
 
 *A:* 
 
-Read the [http://code.google.com/p/as3glue/wiki/Reference Reference] and the [http://code.google.com/p/as3glue/wiki/Instructions Instructions]. Also check out Bjoern Hartmann's documentation at [http://protolab.pbwiki.com/FirmataAndFlash protolab].
+Read the [http://code.google.com/p/as3glue/wiki/Reference Reference] and the [http://code.google.com/p/as3glue/wiki/Instructions Instructions]. Also have a look at the documentation at [http://protolab.pbwiki.com/FirmataAndFlash protolab].
 
 *Q:* 
 
@@ -14,16 +14,14 @@ The serial proxy sees a connection but I can't send/receive data to/from the Ard
 
 1. Make sure you are connecting to the port your Arduino is on (check serproxy.cfg). 
 
-2. Double check that the baud setting in serproxy.cfg and Pd_firmware.pde is the same. Data will be scrambled and no events will be triggered if the settings differ. The default baud rate in the Standard Firmata Arduino firmware (formerly known as Pd_firmware) is at the time of writing 57600. The baud rate in the firmware and serproxy.cfg example that is  redistributed with as3Glue has been changed to 115200. If you don't use the included Pd_firmware.pde or serproxy.cfg example then you might need to change their setting. 
+2. Double check that the baud setting in serproxy.cfg and Standard_Firmata.pde is the same. Data will be scrambled and no events will be triggered if the settings differ. The default baud rate in the Standard Firmata Arduino firmware is at the time of writing 57600. The baud rate in the firmware and serproxy.cfg example that is  redistributed with as3Glue is also 57600. If you don't use the included Standard_Firmata.pde or serproxy.cfg example then you might need to change the settings. 
 
-3. Make sure that newlines_to_nils=false in serproxy.cfg. If it is set to true then the serial proxy will convert the "new lines" ascii character (0a in hexadecimal, 10 in decimal) to 0.
-
-4. Try to use a lower baud rate than 115200. 115200 has been working fine for me but it might not for you. Let me know if this resolves your problem.  
+3. Make sure that newlines_to_nils=false in serproxy.cfg. If it is set to true then the serial proxy will convert the "new lines" ascii character (0a in hexadecimal, 10 in decimal) to 0. 
 
 *Q:* I can't get serial proxy configured correctly.
 
 *A:* 
 
-OS X: Try using [http://protolab.pbwiki.com/Arduino2Flash Arduino2Flash] instead of serialProxy.
+OS X: Some people using Intel Macs are [http://protolab.pbwiki.com/Arduino2Flash reportedly] unable to get serproxy configured correctly. Try using [http://protolab.pbwiki.com/Arduino2Flash Arduino2Flash] instead of serialProxy.
 
 Windows: Try [http://tinker.it/now/2007/06/03/new-tinkerproxy-for-windows tinkerProxy].
