@@ -15,3 +15,5 @@ How to interface an Arduino board from Flash/Flex/AIR applications using the Ard
 4. Register event listeners for incoming Arduino data (see the included examples). 
 
 5. Read and write to the Arduino using functions similar to those in the Arduino reference (see the included examples).
+
+6. For more information see the instructions at [http://protolab.pbwiki.com/FirmataAndFlash protolab]
