@@ -1,3 +1,5 @@
+#summary Quickstart reference
+
 Contributed by [http://bjoern.org Bjoern Hartmann], originally written for [http://protolab.pbwiki.com/As3glueReference protolab]
 
 =Creation=
