@@ -24,6 +24,6 @@ The serial proxy sees a connection but I can't send/receive data to/from the Ard
 
 *A:* 
 
-OS X: Try using [http://protolab.pbwiki.com/Arduino2Flash Arduino2Flash] instead of serialProxy
+OS X: Try using [http://protolab.pbwiki.com/Arduino2Flash Arduino2Flash] instead of serialProxy.
 
-Windows: Try [http://tinker.it/now/2007/06/03/new-tinkerproxy-for-windows tinkerProxy]
+Windows: Try [http://tinker.it/now/2007/06/03/new-tinkerproxy-for-windows tinkerProxy].
