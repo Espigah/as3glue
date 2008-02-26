@@ -1,5 +1,9 @@
 #summary Frequently Asked Questions
 
+Q: I need more information. 
+
+A: Read the Reference and the Instructions. Also check out Bjoern Hartmann's documentation at [http://protolab.pbwiki.com/FirmataAndFlash protolab].
+
 *Q:* 
 
 The serial proxy sees a connection but I can't send/receive data to/from the Arduino.
