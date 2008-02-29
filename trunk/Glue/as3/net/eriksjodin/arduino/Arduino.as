@@ -169,11 +169,6 @@ package net.eriksjodin.arduino {
 			flush();
 		}
 		
-		// TODO apply filters...
-		public function setAnalogPinSmoothing (pin:Number, alpha:Number):void{
-	
-		}
-		
 		public function requestFirmwareVersion ():void{
 			writeByte(ARD_REPORT_VERSION);
 			flush();
@@ -215,7 +210,6 @@ package net.eriksjodin.arduino {
 							dispatchEvent(new ArduinoEvent(ArduinoEvent.FIRMWARE_VERSION, 0, _firmwareVersion, _port));
 						break;
 						case ARD_ANALOG_MESSAGE: 
-							// TODO apply smoothing
 							_analogData[_multiByteChannel] = (_storedInputData[0] << 7) | _storedInputData[1];
 							if(_analogData[_multiByteChannel]!=_previousAnalogData[_multiByteChannel])
 								dispatchEvent(new ArduinoEvent(ArduinoEvent.ANALOG_DATA, _multiByteChannel, _analogData[_multiByteChannel], _port));
