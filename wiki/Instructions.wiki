@@ -12,8 +12,8 @@ How to interface an Arduino board from Flash/Flex/AIR applications using the Ard
 
 3. Instantiate an Arduino object using the port that you set up in (2).
 
-4. Register event listeners for incoming Arduino data (see the included examples). 
+4. Register event listeners for incoming Arduino data (see the SimpleIO example). 
 
-5. Read and write to the Arduino using functions similar to those in the Arduino reference (see the included examples).
+5. Read and write to the Arduino using functions similar to those in the Arduino reference (see the SimpleIO example).
 
-6. For more information see the instructions at [http://protolab.pbwiki.com/FirmataAndFlash protolab]
+6. For more information see the [http://code.google.com/p/as3glue/wiki/Reference reference],  [http://code.google.com/p/as3glue/wiki/FAQ FAQ] and the included SimpleIO example.
