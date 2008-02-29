@@ -275,7 +275,7 @@ void pin13strobe(int count, int onInterval, int offInterval) {
  *============================================================================*/
 void setup() {
   byte i;
-
+  Serial.begin(57600);	
   // flash the pin 13 with the protocol version
   pinMode(13,OUTPUT);
   pin13strobe(2,1,4); // separator, a quick burst
@@ -292,7 +292,7 @@ void setup() {
     setPinMode(i,OUTPUT);
   }
   
-  Serial.begin(57600);
+  
   // TODO: load state from EEPROM here
 
   /* TODO: send digital inputs here, if enabled, to set the initial state on the
