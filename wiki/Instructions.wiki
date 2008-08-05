@@ -6,7 +6,7 @@ How to interface an Arduino board from Flash/Flex/AIR applications using the Ard
 
 = Details =
 
-1. Upload Standard_Firmata.pde (or one of the other included Arduino sketches) to the Arduino board.
+1. Upload Standard_Firmata.pde (or one of the other included Arduino sketches) to the Arduino board. If you are using another version than Arduino 0010 you also need to install the Firmata library by putting the Firmata folder in the Arduino hardware\libraries folder.
 
 2. Configure and start serialProxy to enable Flash to communicate with the Arduino via a socket connection. A sample config file for serialProxy is included in the library.
 
