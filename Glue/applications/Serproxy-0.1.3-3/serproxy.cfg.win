@@ -1,0 +1,21 @@
+# Example configuration file for serproxy - PC Version
+# For use with Firmata 2.0
+# Note: in this example, Arduino uses COM3 - this is reflected in the line comm_ports=3 and net_port3=5331 below. 
+# If your board is on COM4, you'd have to change those lines to comm_ports=4 and net_port4=5331. 
+
+# Do not Transform newlines coming from the serial port into nils
+newlines_to_nils=false
+
+# Comm ports used
+comm_ports=3
+
+# Default settings
+comm_baud=115200
+comm_databits=8
+comm_stopbits=1
+comm_parity=none
+# Idle time out in seconds
+timeout=300
+
+# Settings for COM3
+net_port3=5331
