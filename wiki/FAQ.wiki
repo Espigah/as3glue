@@ -30,4 +30,4 @@ Windows: Try [http://tinker.it/now/2007/06/03/new-tinkerproxy-for-windows tinker
 
 *A:*
 
-There is some confusion surrounding different versions of the Firmata firmware. It will hopefully sort itself out soon. The version that ships with as3Glue is Pd_firmware 1.32 from the Pure Data CVS, with serial communication set to 57600. 
+There is some confusion surrounding different versions of the Firmata firmware. It will hopefully sort itself out soon. The version that ships with as3Glue_v2 is Firmata2.0 beta 3. The version that ships with as3Glue_v1 is Pd_firmware 1.32 from the Pure Data CVS, with serial communication set to 57600. 
