@@ -358,7 +358,7 @@ package net.eriksjodin.arduino {
 		/**
 		* Write up to 14 bits of an integer as two separate 7bit- bytes
 		*/
-		protected function writeIntAsTwoBytes(i:Number) {
+		protected function writeIntAsTwoBytes(i:Number):void {
 			i=int(i);
 			writeByte(i%128); //LSB first
 			writeByte(i>>7);  //MSB second
