@@ -1,0 +1,9 @@
+#summary Release notes
+
+= Versions =
+*as3Glue_v2_beta2.zip* 
+  * Fixed missing return value in Arduino.as that generated error when compiled with mxmlc.
+  * Added Firmata firmware examples with Servo support.
+
+*as3Glue_v2_beta1.zip* 
+  * First release compatible with Firmata 2 protocol.
