@@ -4,7 +4,7 @@
 
 *A:* 
 
-Read the [http://code.google.com/p/as3glue/wiki/Reference Reference] and the [http://code.google.com/p/as3glue/wiki/Instructions Instructions]. Also have a look at the documentation at [http://protolab.pbwiki.com/FirmataAndFlash protolab].
+Read the [http://code.google.com/p/as3glue/wiki/Reference Reference] and the [http://code.google.com/p/as3glue/wiki/Instructions Instructions]. Also have a look at the documentation at [http://protolab.pbwiki.com/FirmataAndFlash protolab]. And [http://thestem.ca/ Bret Forsyths] ASDoc documentation at: [http://thestem.ca/as3gluedocs/ http://thestem.ca/as3gluedocs/] 
 
 *Q:* 
 
