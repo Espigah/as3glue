@@ -361,7 +361,7 @@ package net.eriksjodin.arduino {
 		{
 			//assemble string from rcv bytes - weird.
 			var fname:String="";
-			for(var i:Number=1; i < msg.length;i+=2) 
+			for(var i:int=1; i < msg.length;i+=2) 
 			{
 				fname+=String.fromCharCode(msg[i]);
 			}
@@ -373,7 +373,7 @@ package net.eriksjodin.arduino {
 		{
 				//assemble string from rcv bytes - weird.
 				var fname:String="";
-				for(var i:Number=3; i< msg.length;i+=2)
+				for(var i:int=3; i< msg.length;i+=2)
 				{
 					fname+=String.fromCharCode(msg[i]);
 				}
