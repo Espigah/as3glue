@@ -22,43 +22,47 @@
  * FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR
  * OTHER DEALINGS IN THE SOFTWARE.
  */
-package net.eriksjodin.arduino {
-	
-	import flash.net.Socket;
-	import flash.events.ProgressEvent;
-	import net.eriksjodin.arduino.events.ArduinoEvent;
-	import net.eriksjodin.arduino.events.ArduinoSysExEvent;
-	import flash.utils.ByteArray;
-	import net.eriksjodin.helpers.Log;
-	
-	 /**
-		* ArduinoWithServo class is a proxy objecr for Firmata2  protocol
-		* and StandardPlusServoFirmata firmware (included with this project).
-		* Currently only works on pins 9 or 10.
+package net.eriksjodin.arduino
+{
+
+	/**
+	 * ArduinoWithServo class is a proxy objecr for Firmata2  protocol
+	 * and StandardPlusServoFirmata firmware (included with this project).
+	 * Currently only works on pins 9 or 10.
 	 * @author Bjoern Hartmann, bjoern.org
 	 */
-	public class ArduinoWithServo extends Arduino {
-		public static const SERVO : int = 4;
-		private static const SERVO_CONFIG:int =0x70; 
-		public function ArduinoWithServo(host:String = "127.0.0.1", port:int = 5331) {
-			super(host,port);
-			}		
+	public class ArduinoWithServo extends Arduino
+	{
+		public static const SERVO:int=4;
+		private static const SERVO_CONFIG:int=0x70;
 
-			//Send SysEx Message to configure servo
-			public function setupServo(pin:Number, angle:Number, minPulse:Number=544, maxPulse:Number=2400) {
-				if(!(pin==9 || pin==10)) {
-					trace("ArduinoWithServo error: can only attach servo to pins 9 or 10.");
-					return;
-				}
-				/*TODO: i believe min, max have to be divisible by 16 */
-				writeByte(ARD_SYSEX_MESSAGE_START);
-				writeByte(SERVO_CONFIG);
-				writeByte(int(pin));
-				writeIntAsTwoBytes(int(minPulse));
-				writeIntAsTwoBytes(int(maxPulse));
-				writeIntAsTwoBytes(int(angle));
-				writeByte(ARD_SYSEX_MESSAGE_END);
-				flush();
+		public function ArduinoWithServo(host:String="127.0.0.1", port:int=5331)
+		{
+			super(host, port);
+		}
+
+		public function destory():void
+		{
+			super.destory();
+		}
+
+		//Send SysEx Message to configure servo
+		public function setupServo(pin:Number, angle:Number, minPulse:Number=544, maxPulse:Number=2400):void
+		{
+			if (!(pin == 9 || pin == 10))
+			{
+				trace("ArduinoWithServo error: can only attach servo to pins 9 or 10.");
+				return;
 			}
+			/*TODO: i believe min, max have to be divisible by 16 */
+			writeByte(ARD_SYSEX_MESSAGE_START);
+			writeByte(SERVO_CONFIG);
+			writeByte(int(pin));
+			writeIntAsTwoBytes(int(minPulse));
+			writeIntAsTwoBytes(int(maxPulse));
+			writeIntAsTwoBytes(int(angle));
+			writeByte(ARD_SYSEX_MESSAGE_END);
+			flush();
+		}
 	}
 }
