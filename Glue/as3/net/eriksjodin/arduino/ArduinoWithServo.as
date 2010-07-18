@@ -41,28 +41,33 @@ package net.eriksjodin.arduino
 			super(host, port);
 		}
 
-		public function destory():void
-		{
-			super.destory();
-		}
-
 		//Send SysEx Message to configure servo
-		public function setupServo(pin:Number, angle:Number, minPulse:Number=544, maxPulse:Number=2400):void
+		// Ercan Bozoglu, why use Numbers in parameters and then convert all to int?
+		public function setupServo(pin:int, angle:int, minPulse:int=544, maxPulse:int=2400):void
 		{
-			if (!(pin == 9 || pin == 10))
+			if (!destroyed)
 			{
-				trace("ArduinoWithServo error: can only attach servo to pins 9 or 10.");
-				return;
+				if (pin == 9 || pin == 10)
+				{
+					/*TODO: i believe min, max have to be divisible by 16 */
+					writeByte(ARD_SYSEX_MESSAGE_START);
+					writeByte(SERVO_CONFIG);
+					writeByte(pin);
+					writeIntAsTwoBytes(minPulse);
+					writeIntAsTwoBytes(maxPulse);
+					writeIntAsTwoBytes(angle);
+					writeByte(ARD_SYSEX_MESSAGE_END);
+					flush();
+				}
+				else
+				{
+					trace("ArduinoWithServo:setupServo error: can only attach servo to pins 9 or 10.");
+				}
 			}
-			/*TODO: i believe min, max have to be divisible by 16 */
-			writeByte(ARD_SYSEX_MESSAGE_START);
-			writeByte(SERVO_CONFIG);
-			writeByte(int(pin));
-			writeIntAsTwoBytes(int(minPulse));
-			writeIntAsTwoBytes(int(maxPulse));
-			writeIntAsTwoBytes(int(angle));
-			writeByte(ARD_SYSEX_MESSAGE_END);
-			flush();
+			else
+			{
+				trace("ArduinoWithServo:setupServo is destroyed");
+			}
 		}
 	}
 }

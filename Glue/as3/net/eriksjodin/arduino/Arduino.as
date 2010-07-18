@@ -85,6 +85,7 @@ package net.eriksjodin.arduino
 				addListeners();
 			}
 		}
+		protected var destroyed:Boolean;
 		private var _analogData:Array=new Array();
 		private var _digitalData:Array=[0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0];
 		private var _digitalPins:int=0;
@@ -101,6 +102,16 @@ package net.eriksjodin.arduino
 		private var _sysExData:ByteArray=new ByteArray();
 		// data processing variables
 		private var _waitForData:int=0;
+
+		/**
+		 * Removes listeners and kills processes running.
+		 * Use when want to kill the arduino.
+		 */
+		public function destory():void
+		{
+			destroyed=true;
+			removeListeners();
+		}
 
 		public function disableDigitalPinReporting():void
 		{
@@ -219,15 +230,6 @@ package net.eriksjodin.arduino
 		public function writeDigitalPins(mask:Number):void
 		{
 			// TODO
-		}
-		
-		/**
-		 * Removes listeners and kills processes running.
-		 * Use when want to kill the arduino.
-		 */
-		protected function destory():void
-		{
-			removeListeners();
 		}
 
 		/**
